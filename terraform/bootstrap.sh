@@ -10,6 +10,14 @@ SUBSCRIPTION_ID="ff067715-1984-46bc-89a8-b48b5a228b01"
 echo "==> Definindo subscription..."
 az account set --subscription "$SUBSCRIPTION_ID"
 
+echo "==> Registrando providers necessários..."
+for ns in Microsoft.Storage Microsoft.DBforPostgreSQL Microsoft.Network \
+          Microsoft.App Microsoft.OperationalInsights Microsoft.ContainerRegistry \
+          Microsoft.Web; do
+  az provider register --namespace "$ns" --output none
+  echo "    $ns registrado"
+done
+
 echo "==> Criando resource group '$RG_NAME'..."
 az group create \
   --name "$RG_NAME" \
