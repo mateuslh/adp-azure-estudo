@@ -29,6 +29,11 @@ resource "azurerm_postgresql_flexible_server" "main" {
   public_network_access_enabled = true
 
   tags = var.tags
+
+  # A Azure atribui zone automaticamente — ignorar para evitar drift
+  lifecycle {
+    ignore_changes = [zone]
+  }
 }
 
 resource "azurerm_postgresql_flexible_server_database" "main" {
