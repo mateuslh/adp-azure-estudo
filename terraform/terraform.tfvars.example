@@ -1,0 +1,6 @@
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+resource_group_name = "rg-adp-postgres-test"
+location            = "brazilsouth"
+db_admin_username   = "pgadmin"
+db_admin_password   = "SenhaForte@123!"
+db_name             = "adp_test"
