@@ -26,11 +26,6 @@ resource "azurerm_postgresql_flexible_server" "main" {
   backup_retention_days        = 7
   geo_redundant_backup_enabled = false
 
-  # Sem alta disponibilidade para reduzir custo
-  high_availability {
-    mode = "Disabled"
-  }
-
   # Acesso público controlado por firewall rules abaixo
   public_network_access_enabled = true
 
