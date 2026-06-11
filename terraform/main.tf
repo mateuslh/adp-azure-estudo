@@ -6,7 +6,7 @@ data "azurerm_resource_group" "main" {
 # Flexible Server é o tier atual recomendado pela Azure (Single Server está sendo descontinuado).
 # SKU Standard_B1ms: burstable, 1 vCore, 2 GB RAM — o menor e mais barato disponível.
 resource "azurerm_postgresql_flexible_server" "main" {
-  name                   = "psql-adp-test"
+  name                   = "psql-adp-estudo"
   resource_group_name    = data.azurerm_resource_group.main.name
   location               = data.azurerm_resource_group.main.location
   version                = "16"
