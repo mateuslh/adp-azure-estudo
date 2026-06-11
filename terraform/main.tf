@@ -1,4 +1,3 @@
-# RG já existe e é compartilhado — apenas referenciado, não gerenciado pelo Terraform
 data "azurerm_resource_group" "main" {
   name = var.resource_group_name
 }
