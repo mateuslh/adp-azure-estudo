@@ -1,7 +1,6 @@
-resource "azurerm_resource_group" "main" {
-  name     = var.resource_group_name
-  location = var.location
-  tags     = var.tags
+# RG já existe e é compartilhado — apenas referenciado, não gerenciado pelo Terraform
+data "azurerm_resource_group" "main" {
+  name = var.resource_group_name
 }
 
 resource "random_string" "server_suffix" {
@@ -14,8 +13,8 @@ resource "random_string" "server_suffix" {
 # SKU Standard_B1ms: burstable, 1 vCore, 2 GB RAM — o menor e mais barato disponível.
 resource "azurerm_postgresql_flexible_server" "main" {
   name                   = "psql-adp-test-${random_string.server_suffix.result}"
-  resource_group_name    = azurerm_resource_group.main.name
-  location               = azurerm_resource_group.main.location
+  resource_group_name    = data.azurerm_resource_group.main.name
+  location               = data.azurerm_resource_group.main.location
   version                = "16"
   administrator_login    = var.db_admin_username
   administrator_password = var.db_admin_password

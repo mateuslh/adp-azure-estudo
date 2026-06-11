@@ -21,5 +21,5 @@ output "connection_string" {
 
 output "resource_group_name" {
   description = "Nome do resource group criado"
-  value       = azurerm_resource_group.main.name
+  value       = data.azurerm_resource_group.main.name
 }
