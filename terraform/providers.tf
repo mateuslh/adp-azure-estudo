@@ -13,7 +13,7 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "rg-terraform-state"
+    resource_group_name  = "rg-azure-estudo"
     storage_account_name = "stterraformadpstate"
     container_name       = "tfstate"
     key                  = "adp-postgres.tfstate"

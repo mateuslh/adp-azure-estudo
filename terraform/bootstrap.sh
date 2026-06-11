@@ -2,7 +2,7 @@
 set -euo pipefail
 
 LOCATION="brazilsouth"
-RG_NAME="rg-terraform-state"
+RG_NAME="rg-azure-estudo"
 STORAGE_ACCOUNT="stterraformadpstate"
 CONTAINER_NAME="tfstate"
 SUBSCRIPTION_ID="ff067715-1984-46bc-89a8-b48b5a228b01"

@@ -12,7 +12,7 @@ variable "location" {
 variable "resource_group_name" {
   description = "Nome do resource group"
   type        = string
-  default     = "rg-adp-postgres-test"
+  default     = "rg-azure-estudo"
 }
 
 variable "db_admin_username" {
